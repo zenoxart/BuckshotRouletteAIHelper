@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\zenox\\Desktop\\@Coding\\BuckshotRouletteHelper\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E2B2C4CE-11EB-434B-9848-6F94B6246AF1}|BuckshotRouletteHelper\\BuckshotRouletteHelper.csproj|c:\\users\\zenox\\desktop\\@coding\\buckshotroulettehelper\\buckshotroulettehelper\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E2B2C4CE-11EB-434B-9848-6F94B6246AF1}|BuckshotRouletteHelper\\BuckshotRouletteHelper.csproj|solutionrelative:buckshotroulettehelper\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2B2C4CE-11EB-434B-9848-6F94B6246AF1}|BuckshotRouletteHelper\\BuckshotRouletteHelper.csproj|c:\\users\\zenox\\desktop\\@coding\\buckshotroulettehelper\\buckshotroulettehelper\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2B2C4CE-11EB-434B-9848-6F94B6246AF1}|BuckshotRouletteHelper\\BuckshotRouletteHelper.csproj|solutionrelative:buckshotroulettehelper\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2B2C4CE-11EB-434B-9848-6F94B6246AF1}|BuckshotRouletteHelper\\BuckshotRouletteHelper.csproj|c:\\users\\zenox\\desktop\\@coding\\buckshotroulettehelper\\buckshotroulettehelper\\neuralnetworkanalyser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2B2C4CE-11EB-434B-9848-6F94B6246AF1}|BuckshotRouletteHelper\\BuckshotRouletteHelper.csproj|solutionrelative:buckshotroulettehelper\\neuralnetworkanalyser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NeuralNetworkAnalyser.cs",
+              "DocumentMoniker": "C:\\Users\\zenox\\Desktop\\@Coding\\BuckshotRouletteHelper\\BuckshotRouletteHelper\\NeuralNetworkAnalyser.cs",
+              "RelativeDocumentMoniker": "BuckshotRouletteHelper\\NeuralNetworkAnalyser.cs",
+              "ToolTip": "C:\\Users\\zenox\\Desktop\\@Coding\\BuckshotRouletteHelper\\BuckshotRouletteHelper\\NeuralNetworkAnalyser.cs",
+              "RelativeToolTip": "BuckshotRouletteHelper\\NeuralNetworkAnalyser.cs",
+              "ViewState": "AQIAAE0AAAAAAAAAAAAswGcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T15:27:34.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\zenox\\Desktop\\@Coding\\BuckshotRouletteHelper\\BuckshotRouletteHelper\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "BuckshotRouletteHelper\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\zenox\\Desktop\\@Coding\\BuckshotRouletteHelper\\BuckshotRouletteHelper\\MainWindow.xaml",
+              "RelativeToolTip": "BuckshotRouletteHelper\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-06T12:00:02.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\zenox\\Desktop\\@Coding\\BuckshotRouletteHelper\\BuckshotRouletteHelper\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "BuckshotRouletteHelper\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\zenox\\Desktop\\@Coding\\BuckshotRouletteHelper\\BuckshotRouletteHelper\\MainWindow.xaml.cs",
+              "RelativeToolTip": "BuckshotRouletteHelper\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T11:59:58.334Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

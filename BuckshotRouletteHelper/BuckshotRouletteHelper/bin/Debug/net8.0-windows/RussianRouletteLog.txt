@@ -1,0 +1,310 @@
+Game Start: 06.09.2024 17:46:36
+Chambers: 8, Bullets: 7
+-----------------------------------------
+Round Details: 
+Action: Bullet Subtracted
+Remaining Bullets: 0, Remaining Blanks: 2
+Chambers: 2
+Hit Probability: 0,00%
+-----------------------------
+Round Details: 
+Action: Blank Subtracted
+Remaining Bullets: 0, Remaining Blanks: 1
+Chambers: 1
+Hit Probability: 0,00%
+-----------------------------
+Round Details: 
+Action: Blank Subtracted
+Remaining Bullets: 0, Remaining Blanks: 0
+Chambers: 0
+Hit Probability: NaN%
+-----------------------------
+Game Result: Won at 06.09.2024 17:48:06
+-----------------------------------------
+Game Start: 06.09.2024 17:48:10
+Chambers: 8, Bullets: 7
+-----------------------------------------
+Round Details: 
+Action: Blank Subtracted
+Remaining Bullets: 1, Remaining Blanks: 0
+Chambers: 1
+Hit Probability: 100,00%
+-----------------------------
+Round Details: 
+Action: Bullet Subtracted
+Remaining Bullets: 0, Remaining Blanks: 0
+Chambers: 0
+Hit Probability: NaN%
+-----------------------------
+Game Result: Won at 06.09.2024 17:49:17
+-----------------------------------------
+Game Start: 06.09.2024 17:49:18
+Chambers: 8, Bullets: 7
+-----------------------------------------
+Round Details: 
+Action: Bullet Subtracted
+Remaining Bullets: 1, Remaining Blanks: 3
+Chambers: 4
+Hit Probability: 25,00%
+-----------------------------
+Round Details: 
+Action: Blank Subtracted
+Remaining Bullets: 1, Remaining Blanks: 2
+Chambers: 3
+Hit Probability: 33,33%
+-----------------------------
+Round Details: 
+Action: Bullet Subtracted
+Remaining Bullets: 0, Remaining Blanks: 2
+Chambers: 2
+Hit Probability: 0,00%
+-----------------------------
+Round Details: 
+Action: Blank Subtracted
+Remaining Bullets: 0, Remaining Blanks: 1
+Chambers: 1
+Hit Probability: 0,00%
+-----------------------------
+Round Details: 
+Action: Blank Subtracted
+Remaining Bullets: 0, Remaining Blanks: 0
+Chambers: 0
+Hit Probability: NaN%
+-----------------------------
+Game Result: Won at 06.09.2024 17:52:08
+-----------------------------------------
+Game Start: 06.09.2024 17:52:10
+Chambers: 8, Bullets: 7
+-----------------------------------------
+Round Details: 
+Action: Blank Subtracted
+Remaining Bullets: 2, Remaining Blanks: 1
+Chambers: 3
+Hit Probability: 66,67%
+-----------------------------
+Round Details: 
+Action: Blank Subtracted
+Remaining Bullets: 2, Remaining Blanks: 0
+Chambers: 2
+Hit Probability: 100,00%
+-----------------------------
+Round Details: 
+Action: Bullet Subtracted
+Remaining Bullets: 1, Remaining Blanks: 0
+Chambers: 1
+Hit Probability: 100,00%
+-----------------------------
+Round Details: 
+Action: Bullet Subtracted
+Remaining Bullets: 0, Remaining Blanks: 0
+Chambers: 0
+Hit Probability: NaN%
+-----------------------------
+Game Result: Won at 06.09.2024 17:53:39
+-----------------------------------------
+Game Start: 06.09.2024 17:53:41
+Chambers: 8, Bullets: 7
+-----------------------------------------
+Round Details: 
+Action: Blank Subtracted
+Remaining Bullets: 1, Remaining Blanks: 1
+Chambers: 2
+Hit Probability: 50,00%
+-----------------------------
+Round Details: 
+Action: Blank Subtracted
+Remaining Bullets: 1, Remaining Blanks: 0
+Chambers: 1
+Hit Probability: 100,00%
+-----------------------------
+Round Details: 
+Action: Bullet Subtracted
+Remaining Bullets: 0, Remaining Blanks: 0
+Chambers: 0
+Hit Probability: NaN%
+-----------------------------
+Game Result: Won at 06.09.2024 17:54:51
+-----------------------------------------
+Game Start: 06.09.2024 17:54:54
+Chambers: 8, Bullets: 7
+-----------------------------------------
+Round Details: 
+Action: Blank Subtracted
+Remaining Bullets: 1, Remaining Blanks: 1
+Chambers: 2
+Hit Probability: 50,00%
+-----------------------------
+Round Details: 
+Action: Bullet Subtracted
+Remaining Bullets: 0, Remaining Blanks: 1
+Chambers: 1
+Hit Probability: 0,00%
+-----------------------------
+Round Details: 
+Action: Blank Subtracted
+Remaining Bullets: 0, Remaining Blanks: 0
+Chambers: 0
+Hit Probability: NaN%
+-----------------------------
+Game Result: Won at 06.09.2024 17:56:25
+-----------------------------------------
+Game Start: 06.09.2024 17:56:27
+Chambers: 8, Bullets: 7
+-----------------------------------------
+Round Details: 
+Action: Bullet Subtracted
+Remaining Bullets: 2, Remaining Blanks: 4
+Chambers: 6
+Hit Probability: 33,33%
+-----------------------------
+Round Details: 
+Action: Blank Subtracted
+Remaining Bullets: 2, Remaining Blanks: 3
+Chambers: 5
+Hit Probability: 40,00%
+-----------------------------
+Round Details: 
+Action: Blank Subtracted
+Remaining Bullets: 2, Remaining Blanks: 2
+Chambers: 4
+Hit Probability: 50,00%
+-----------------------------
+Round Details: 
+Action: Bullet Subtracted
+Remaining Bullets: 1, Remaining Blanks: 2
+Chambers: 3
+Hit Probability: 33,33%
+-----------------------------
+Round Details: 
+Action: Bullet Subtracted
+Remaining Bullets: 0, Remaining Blanks: 2
+Chambers: 2
+Hit Probability: 0,00%
+-----------------------------
+Round Details: 
+Action: Blank Subtracted
+Remaining Bullets: 0, Remaining Blanks: 1
+Chambers: 1
+Hit Probability: 0,00%
+-----------------------------
+Round Details: 
+Action: Blank Subtracted
+Remaining Bullets: 0, Remaining Blanks: 0
+Chambers: 0
+Hit Probability: NaN%
+-----------------------------
+Game Result: Won at 06.09.2024 17:59:29
+-----------------------------------------
+Game Start: 06.09.2024 17:59:31
+Chambers: 8, Bullets: 7
+-----------------------------------------
+Round Details: 
+Action: Blank Subtracted
+Remaining Bullets: 2, Remaining Blanks: 1
+Chambers: 3
+Hit Probability: 66,67%
+-----------------------------
+Game Result: Won at 06.09.2024 18:00:50
+-----------------------------------------
+Game Start: 06.09.2024 18:00:52
+Chambers: 8, Bullets: 7
+-----------------------------------------
+Round Details: 
+Action: Bullet Subtracted
+Remaining Bullets: 3, Remaining Blanks: 4
+Chambers: 7
+Hit Probability: 42,86%
+-----------------------------
+Round Details: 
+Action: Bullet Subtracted
+Remaining Bullets: 2, Remaining Blanks: 4
+Chambers: 6
+Hit Probability: 33,33%
+-----------------------------
+Round Details: 
+Action: Blank Subtracted
+Remaining Bullets: 2, Remaining Blanks: 3
+Chambers: 5
+Hit Probability: 40,00%
+-----------------------------
+Round Details: 
+Action: Bullet Subtracted
+Remaining Bullets: 1, Remaining Blanks: 3
+Chambers: 4
+Hit Probability: 25,00%
+-----------------------------
+Round Details: 
+Action: Blank Subtracted
+Remaining Bullets: 1, Remaining Blanks: 2
+Chambers: 3
+Hit Probability: 33,33%
+-----------------------------
+Round Details: 
+Action: Bullet Subtracted
+Remaining Bullets: 0, Remaining Blanks: 2
+Chambers: 2
+Hit Probability: 0,00%
+-----------------------------
+Game Result: Won at 06.09.2024 18:02:30
+-----------------------------------------
+Game Start: 06.09.2024 18:02:50
+Chambers: 8, Bullets: 7
+-----------------------------------------
+Round Details: 
+Action: Bullet Subtracted
+Remaining Bullets: 0, Remaining Blanks: 2
+Chambers: 2
+Hit Probability: 0,00%
+-----------------------------
+Round Details: 
+Action: Blank Subtracted
+Remaining Bullets: 0, Remaining Blanks: 1
+Chambers: 1
+Hit Probability: 0,00%
+-----------------------------
+Round Details: 
+Action: Blank Subtracted
+Remaining Bullets: 0, Remaining Blanks: 0
+Chambers: 0
+Hit Probability: NaN%
+-----------------------------
+Game Result: Won at 06.09.2024 18:04:26
+-----------------------------------------
+Game Start: 06.09.2024 18:04:27
+Chambers: 8, Bullets: 7
+-----------------------------------------
+Round Details: 
+Action: Blank Subtracted
+Remaining Bullets: 4, Remaining Blanks: 3
+Chambers: 7
+Hit Probability: 57,14%
+-----------------------------
+Round Details: 
+Action: Blank Subtracted
+Remaining Bullets: 4, Remaining Blanks: 2
+Chambers: 6
+Hit Probability: 66,67%
+-----------------------------
+Round Details: 
+Action: Blank Subtracted
+Remaining Bullets: 4, Remaining Blanks: 1
+Chambers: 5
+Hit Probability: 80,00%
+-----------------------------
+Round Details: 
+Action: Bullet Subtracted
+Remaining Bullets: 3, Remaining Blanks: 1
+Chambers: 4
+Hit Probability: 75,00%
+-----------------------------
+Round Details: 
+Action: Bullet Subtracted
+Remaining Bullets: 2, Remaining Blanks: 1
+Chambers: 3
+Hit Probability: 66,67%
+-----------------------------
+Game Result: Lost at 06.09.2024 18:06:31
+-----------------------------------------
+Game Start: 06.09.2024 18:06:37
+Chambers: 8, Bullets: 7
+-----------------------------------------
