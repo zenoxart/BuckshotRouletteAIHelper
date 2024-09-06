@@ -302,14 +302,14 @@ namespace BuckshotRouletteHelper
             {
                 Grid chamberGrid = new Grid
                 {
-                    Width = 2 * radius,
-                    Height = 2 * radius
+                    Width = 2.8 * radius,
+                    Height = 2.8 * radius
                 };
 
                 Ellipse circle = new Ellipse
                 {
-                    Width = 2 * radius,
-                    Height = 2 * radius,
+                    Width = 2.8 * radius,
+                    Height = 2.8 * radius,
                     Stroke = Brushes.Black,
                     StrokeThickness = 1
                 };
