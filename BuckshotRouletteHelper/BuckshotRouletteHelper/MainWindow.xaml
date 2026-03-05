@@ -3,127 +3,110 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
         xmlns:local="clr-namespace:BuckshotRouletteHelper"
         mc:Ignorable="d"
-        Title="Russian Roulette Probability Calculator"
-        Height="400" Width="525"
-        Background="#1E1E1E" Foreground="#D4D4D4">
-	<!-- Dark Background and Light Text -->
+        ui:WindowHelper.UseModernWindowStyle="True"
+        Title="Buckshot Roulette AI Helper"
+        Height="520" Width="580">
 
-	<Window.Resources>
-		<!-- Button Style for Dark Mode -->
-		<Style TargetType="Button">
-			<Setter Property="Background" Value="#3E3E42"/>
-			<!-- Dark Gray -->
-			<Setter Property="Foreground" Value="#FFFFFF"/>
-			<!-- White Text -->
-			<Setter Property="FontSize" Value="14"/>
-			<Setter Property="Padding" Value="5"/>
-			<Setter Property="Margin" Value="5"/>
-			<Setter Property="BorderThickness" Value="0"/>
-			<Setter Property="BorderBrush" Value="#007ACC"/>
-			<Setter Property="Width" Value="100"/>
-			<!-- Blue Border -->
-			<Setter Property="Cursor" Value="Hand"/>
-			<Setter Property="Template">
-				<Setter.Value>
-					<ControlTemplate TargetType="Button">
-						<Border Background="{TemplateBinding Background}" 
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="4">
-							<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-						</Border>
-						<ControlTemplate.Triggers>
-							<Trigger Property="IsMouseOver" Value="True">
-								<Setter Property="Background" Value="#007ACC"/>
-								<!-- Blue on hover -->
-							</Trigger>
-							<Trigger Property="IsPressed" Value="True">
-								<Setter Property="Background" Value="#005A9E"/>
-								<!-- Darker blue on press -->
-							</Trigger>
-						</ControlTemplate.Triggers>
-					</ControlTemplate>
-				</Setter.Value>
-			</Setter>
-		</Style>
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-		<!-- TextBox Style for Dark Mode -->
-		<Style TargetType="TextBox">
-			<Setter Property="Background" Value="#252526"/>
-			<!-- Darker Gray -->
-			<Setter Property="Foreground" Value="#D4D4D4"/>
-			<!-- Light Text -->
-			<Setter Property="BorderBrush" Value="#3E3E42"/>
-			<Setter Property="FontSize" Value="14"/>
-			<Setter Property="Padding" Value="5"/>
-		</Style>
+        <!-- Title -->
+        <TextBlock Grid.Row="0"
+                   Text="Buckshot Roulette AI Helper"
+                   Style="{StaticResource TitleTextBlockStyle}"
+                   Margin="0,0,0,16"/>
 
-		<!-- TextBlock Style for Dark Mode -->
-		<Style TargetType="TextBlock">
-			<Setter Property="Foreground" Value="#D4D4D4"/>
-			<!-- Light Text -->
-			<Setter Property="FontSize" Value="14"/>
-			<Setter Property="Margin" Value="10"/>
-		</Style>
-	</Window.Resources>
+        <!-- Chambers and Bullets Input Row -->
+        <Grid Grid.Row="1" Margin="0,0,0,12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="16"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="*"/>
-		</Grid.RowDefinitions>
+            <!-- Chambers -->
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="Chambers" Style="{StaticResource BodyStrongTextBlockStyle}" Margin="0,0,0,4"/>
+                <ui:NumberBox x:Name="ChambersTextBox"
+                              SpinButtonPlacementMode="Compact"
+                              Minimum="0"
+                              Maximum="20"
+                              SmallChange="1"
+                              ValueChanged="ChambersTextBox_ValueChanged"/>
+            </StackPanel>
 
-		<!-- TextBox for Chambers Input -->
-		<StackPanel Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Left">
-			<Label Foreground="White" >Chambers</Label>
-			<TextBox x:Name="ChambersTextBox" Width="100" TextChanged="ChambersTextBox_TextChanged" />
+            <!-- Loaded Hits -->
+            <StackPanel Grid.Column="2">
+                <TextBlock Text="Loaded Hits" Style="{StaticResource BodyStrongTextBlockStyle}" Margin="0,0,0,4"/>
+                <ui:NumberBox x:Name="BulletsTextBox"
+                              SpinButtonPlacementMode="Compact"
+                              Minimum="0"
+                              Maximum="20"
+                              SmallChange="1"
+                              ValueChanged="BulletsTextBox_ValueChanged"/>
+            </StackPanel>
+        </Grid>
 
-		</StackPanel>
+        <!-- Control Buttons -->
+        <WrapPanel Grid.Row="2" Margin="0,0,0,12" HorizontalAlignment="Left">
+            <Button Content="Subtract Bullet" Click="SubtractBulletButton_Click" Margin="0,0,8,8"/>
+            <Button Content="Subtract Blank"  Click="SubtractBlankButton_Click"  Margin="0,0,8,8"/>
+            <Button Content="Undo"            Click="UndoButton_Click"           Margin="0,0,8,8"/>
+            <Button Content="Restart"         Click="RestartButton_Click"        Margin="0,0,0,8"
+                    Style="{StaticResource AccentButtonStyle}"/>
+        </WrapPanel>
 
-		<!-- TextBox for Bullets Input -->
-		<StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left">
-			<Label Foreground="White" >Loaded Hits</Label>
-			<TextBox x:Name="BulletsTextBox" Width="100" TextChanged="BulletsTextBox_TextChanged" />
+        <!-- Won / Lost Buttons -->
+        <WrapPanel Grid.Row="3" Margin="0,0,0,12" HorizontalAlignment="Left">
+            <Button Content="Won"  Click="LogWon_Click"  Margin="0,0,8,0"
+                    Style="{StaticResource AccentButtonStyle}"/>
+            <Button Content="Lost" Click="LogLost_Click" Margin="0,0,0,0"/>
+        </WrapPanel>
 
-		</StackPanel>
-		<!-- Control Buttons Grid -->
-		<Grid Grid.Row="2">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="auto"/>
-				<ColumnDefinition Width="auto"/>
-				<ColumnDefinition Width="auto"/>
-				<ColumnDefinition Width="auto"/>
-			</Grid.ColumnDefinitions>
-			<Button Content="Subtract Bullet" Click="SubtractBulletButton_Click" Grid.Column="0"/>
-			<Button Content="Subtract Blank" Click="SubtractBlankButton_Click" Grid.Column="1"/>
-			<Button Content="Undo" Click="UndoButton_Click" Grid.Column="2"/>
-			<Button Content="Restart" Click="RestartButton_Click" Grid.Column="3"/>
-		</Grid>
+        <!-- Bet Suggestion -->
+        <Border Grid.Row="4"
+                CornerRadius="8"
+                Padding="12,8"
+                Margin="0,0,0,12"
+                Background="{DynamicResource SystemControlBackgroundChromeMediumLowBrush}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="🎯 " FontSize="16" VerticalAlignment="Center"/>
+                <TextBlock x:Name="BetSuggestionTextBlock"
+                           FontSize="15"
+                           FontWeight="SemiBold"
+                           VerticalAlignment="Center"
+                           Text="Bet Suggestion: N/A"/>
+            </StackPanel>
+        </Border>
 
-		<!-- Won/Lost Buttons -->
-		<Grid Grid.Row="3">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="auto"/>
-				<ColumnDefinition Width="auto"/>
-			</Grid.ColumnDefinitions>
-			<Button Content="Won" Click="LogWon_Click" Grid.Column="0"/>
-			<Button Content="Lost" Click="LogLost_Click" Grid.Column="1"/>
-		</Grid>
+        <!-- Probability Info -->
+        <Border Grid.Row="5"
+                CornerRadius="8"
+                Padding="12,10"
+                Margin="0,0,0,12"
+                Background="{DynamicResource SystemControlBackgroundChromeMediumLowBrush}">
+            <TextBlock x:Name="ResultTextBlock"
+                       FontSize="13"
+                       LineHeight="22"/>
+        </Border>
 
-		<!-- Bet Suggestion TextBlock -->
-		<TextBlock x:Name="BetSuggestionTextBlock" Grid.Row="4" FontSize="16" Foreground="#569CD6" Text="Bet Suggestion: N/A" />
-
-		<!-- Canvas to Visualize the Chambers -->
-		<Canvas x:Name="ChambersCanvas" Grid.Row="5" Background="#252526" Margin="10"/>
-		<!-- Dark background for canvas -->
-
-		<!-- Result TextBlock -->
-		<TextBlock x:Name="ResultTextBlock" Grid.Row="6"/>
-	</Grid>
+        <!-- Chamber Visualizer -->
+        <Border Grid.Row="6"
+                CornerRadius="8"
+                Padding="8"
+                Background="{DynamicResource SystemControlBackgroundChromeMediumLowBrush}">
+            <Canvas x:Name="ChambersCanvas" MinHeight="100"/>
+        </Border>
+    </Grid>
 </Window>

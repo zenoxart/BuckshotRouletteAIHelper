@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using ModernWpf.Controls;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -45,8 +46,8 @@ namespace BuckshotRouletteHelper
         public MainWindow()
         {
             InitializeComponent();
-            initialChambers = SafeParseInt(ChambersTextBox.Text, 8);
-            initialBullets = SafeParseInt(BulletsTextBox.Text, 7);
+            initialChambers = GetChambers();
+            initialBullets = GetBullets();
             currentBlanks = initialChambers - initialBullets; // Initial number of blanks
             SaveCurrentState(); // Save the initial state
             UpdateProbabilities(); // Automatically calculate on start
@@ -54,6 +55,18 @@ namespace BuckshotRouletteHelper
 
              // Initialize neural network
             analyzer.TrainNetwork(); // Train neural network on existing log data
+        }
+
+        // Helper to read Chambers NumberBox value
+        private int GetChambers()
+        {
+            return double.IsNaN(ChambersTextBox.Value) ? 0 : (int)ChambersTextBox.Value;
+        }
+
+        // Helper to read Bullets NumberBox value
+        private int GetBullets()
+        {
+            return double.IsNaN(BulletsTextBox.Value) ? 0 : (int)BulletsTextBox.Value;
         }
 
         // Helper method to safely parse integers with validation
@@ -65,16 +78,18 @@ namespace BuckshotRouletteHelper
         // Save the current state
         private void SaveCurrentState()
         {
-            lastChambers = SafeParseInt(ChambersTextBox.Text, 0);
-            lastBullets = SafeParseInt(BulletsTextBox.Text, 0);
+            lastChambers = GetChambers();
+            lastBullets = GetBullets();
             lastBlanks = currentBlanks;
         }
 
         // Restore the last state
         private void RestoreLastState()
         {
-            ChambersTextBox.Text = lastChambers.ToString();
-            BulletsTextBox.Text = lastBullets.ToString();
+            isUndoOperation = true;
+            ChambersTextBox.Value = lastChambers;
+            BulletsTextBox.Value = lastBullets;
+            isUndoOperation = false;
             currentBlanks = lastBlanks;
             DrawChambers(); // Update chamber visuals
             UpdateProbabilities(); // Automatically recalculate
@@ -115,8 +130,10 @@ namespace BuckshotRouletteHelper
         // Reset the state to initial values
         private void RestartButton_Click(object sender, RoutedEventArgs e)
         {
-            BulletsTextBox.Text = "";
-            ChambersTextBox.Text = "";
+            isUndoOperation = true;
+            BulletsTextBox.Value = double.NaN;
+            ChambersTextBox.Value = double.NaN;
+            isUndoOperation = false;
             currentBlanks = initialChambers - initialBullets;
             SaveCurrentState(); // Save the reset state
             DrawChambers(); // Update chamber visuals
@@ -129,15 +146,17 @@ namespace BuckshotRouletteHelper
         {
             SaveCurrentState(); // Save the state before making changes
 
-            int chambers = SafeParseInt(ChambersTextBox.Text, 0);
-            int bullets = SafeParseInt(BulletsTextBox.Text, 0);
+            int chambers = GetChambers();
+            int bullets = GetBullets();
 
             if (bullets > 0 && chambers > 0)
             {
                 bullets--;
                 chambers--;
-                BulletsTextBox.Text = bullets.ToString();
-                ChambersTextBox.Text = chambers.ToString();
+                isUndoOperation = true;
+                BulletsTextBox.Value = bullets;
+                ChambersTextBox.Value = chambers;
+                isUndoOperation = false;
                 currentBlanks = chambers - bullets; // Update the number of blanks
 
                 DrawChambers(); // Update chamber visuals
@@ -158,13 +177,15 @@ namespace BuckshotRouletteHelper
         {
             SaveCurrentState(); // Save the state before making changes
 
-            int chambers = SafeParseInt(ChambersTextBox.Text, 0);
+            int chambers = GetChambers();
 
             if (chambers > 0 && currentBlanks > 0)
             {
                 currentBlanks--;
                 chambers--;
-                ChambersTextBox.Text = chambers.ToString();
+                isUndoOperation = true;
+                ChambersTextBox.Value = chambers;
+                isUndoOperation = false;
 
                 DrawChambers(); // Update chamber visuals
                 UpdateProbabilities(); // Automatically recalculate
@@ -227,17 +248,16 @@ namespace BuckshotRouletteHelper
         // Undo button click handler
         private void UndoButton_Click(object sender, RoutedEventArgs e)
         {
-            isUndoOperation = true; // Indicate that an undo operation is in progress
+            // RestoreLastState temporarily sets isUndoOperation to suppress ValueChanged events
             RestoreLastState(); // Restore the previous state
             RemoveLastLogEntry(); // Remove the last log entry
-            isUndoOperation = false; // Reset the undo operation flag
         }
 
         // Automatically recalculate and display the probabilities and make prediction
         private void UpdateProbabilities()
         {
-            int chambers = SafeParseInt(ChambersTextBox.Text, 0);
-            int bullets = SafeParseInt(BulletsTextBox.Text, 0);
+            int chambers = GetChambers();
+            int bullets = GetBullets();
 
             int blanks = chambers - bullets;
 
@@ -285,14 +305,14 @@ namespace BuckshotRouletteHelper
         private void DrawChambers()
         {
             ChambersCanvas.Children.Clear();
-            int totalChambers = SafeParseInt(ChambersTextBox.Text, 0);
-            int bullets = SafeParseInt(BulletsTextBox.Text, 0);
+            int totalChambers = GetChambers();
+            int bullets = GetBullets();
 
             double radius = 15;
             double spacing = 30;
             double canvasWidth = ChambersCanvas.ActualWidth;
             double startX = (canvasWidth - (totalChambers * spacing)) / 2;
-            double centerY = 50;
+            double centerY = 20;
 
             int remainingBlanks = totalChambers - bullets;
             int remainingBullets = bullets;
@@ -366,13 +386,14 @@ namespace BuckshotRouletteHelper
                 ChambersCanvas.Children.Add(chamberGrid);
             }
         }
-        private void ChambersTextBox_TextChanged(object sender, TextChangedEventArgs e)
+
+        private void ChambersTextBox_ValueChanged(NumberBox sender, NumberBoxValueChangedEventArgs args)
         {
             // Ensure this isn't triggered by an undo operation
             if (isUndoOperation) return;
 
-            int chambers = SafeParseInt(ChambersTextBox.Text, 0);
-            int bullets = SafeParseInt(BulletsTextBox.Text, 0);
+            int chambers = GetChambers();
+            int bullets = GetBullets();
 
             // Ensure the chamber count isn't less than the number of bullets
             if (chambers < bullets)
@@ -389,13 +410,13 @@ namespace BuckshotRouletteHelper
             UpdateProbabilities();
         }
 
-        private void BulletsTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void BulletsTextBox_ValueChanged(NumberBox sender, NumberBoxValueChangedEventArgs args)
         {
             // Ensure this isn't triggered by an undo operation
             if (isUndoOperation) return;
 
-            int chambers = SafeParseInt(ChambersTextBox.Text, 0);
-            int bullets = SafeParseInt(BulletsTextBox.Text, 0);
+            int chambers = GetChambers();
+            int bullets = GetBullets();
 
             // Ensure bullets do not exceed chambers or become negative
             if (bullets < 0 || bullets > chambers)

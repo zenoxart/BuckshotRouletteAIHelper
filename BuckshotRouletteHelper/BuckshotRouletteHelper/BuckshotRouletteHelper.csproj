@@ -13,6 +13,7 @@
     <PackageReference Include="Accord.MachineLearning" Version="3.8.0" />
     <PackageReference Include="Accord.Neuro" Version="3.8.0" />
     <PackageReference Include="Accord.Statistics" Version="3.8.0" />
+    <PackageReference Include="ModernWpf.WPF" Version="0.9.6" />
   </ItemGroup>
 
 </Project>
